@@ -117,6 +117,7 @@ export function push(api) {
         vars: {
           appName: config.name,
           useLocalMongo: api.getConfig().mongo ? 1 : 0,
+          dbName: api.getConfig().mongo && api.getConfig().mongo.name ? api.getConfig().mongo.name : config.name,
           port: config.env.PORT || 80,
           sslConfig: config.ssl,
           logConfig: config.log,
